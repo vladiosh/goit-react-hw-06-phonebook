@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import { NameLabel, Input, FormBlock } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/selectors';
@@ -22,8 +21,6 @@ const ContactForm = () => {
     }
 
     dispatch(addContact(name, number));
-    setName('');
-    setNumber('');
 
     reset();
   };
@@ -67,7 +64,7 @@ const ContactForm = () => {
             />
           </NameLabel>
 
-          <NameLabel htmlFor={nanoid()}>
+          <NameLabel>
             Number
             <Input
               value={number}
