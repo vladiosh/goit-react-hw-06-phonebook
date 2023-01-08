@@ -12,20 +12,20 @@ const App = () => {
   const [filter, setFilter] = useState('');
   // console.log(contacts);
 
-  const addContact = ({ name, number }) => {
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
+  // const addContact = ({ name, number }) => {
+  //   const newContact = {
+  //     id: nanoid(),
+  //     name,
+  //     number,
+  //   };
 
-    if (chekName(newContact.name)) {
-      alert(`${newContact.name} is already in contacts`);
-      return newContact.name;
-    }
+  //   if (chekName(newContact.name)) {
+  //     alert(`${newContact.name} is already in contacts`);
+  //     return newContact.name;
+  //   }
 
-    setContacts([...contacts, newContact]);
-  };
+  //   setContacts([...contacts, newContact]);
+  // };
 
   const changeFilter = event => {
     setFilter(event.currentTarget.value);
@@ -53,7 +53,7 @@ const App = () => {
   return (
     <Container>
       <Head>Phonebook</Head>
-      <ContactForm onSubmit={addContact} />
+      <ContactForm />
       <Head>Contacts</Head>
       <Filter value={filter} onChange={changeFilter} />
       <ContactList contacts={visibleContacts()} />
