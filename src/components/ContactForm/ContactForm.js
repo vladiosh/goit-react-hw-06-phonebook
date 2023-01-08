@@ -15,12 +15,6 @@ const ContactForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    // if (name === onSubmit({ name, number })) {
-    //   console.log(name);
-    //   console.log(onSubmit);
-    //   return;
-    // }
-
     const newContact = contacts.find(contact => contact.name === name);
     if (newContact) {
       alert(`${name} is already in contacts`);
@@ -60,12 +54,11 @@ const ContactForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <FormBlock>
-          <NameLabel htmlFor={nanoid()}>
+          <NameLabel>
             Name
             <Input
               value={name}
               onChange={handleChange}
-              id={nanoid()}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
