@@ -1,20 +1,12 @@
 import PropTypes from 'prop-types';
 import Contact from '../Contact/Contact';
 
-const ContactList = ({ contacts, onDelete }) => {
+const ContactList = ({ contacts }) => {
   return (
     <>
       <ul>
         {contacts.map(({ id, name, number }) => {
-          return (
-            <Contact
-              key={id}
-              id={id}
-              name={name}
-              number={number}
-              onDelete={onDelete}
-            />
-          );
+          return <Contact key={id} id={id} name={name} number={number} />;
         })}
       </ul>
     </>
@@ -30,5 +22,4 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
